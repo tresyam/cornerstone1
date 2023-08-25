@@ -23,9 +23,15 @@ export function makeCartProductObject(productID, buyQuantity){
     }
 }
 
+export function makeUserObject(){
+    
+}
+
 export function makeLoginObject(userName, userPassword){
     return {
         username: userName,
         password: userPassword
+        // username: "mor_2314",
+        // password: "83r5^_"
     }
 }

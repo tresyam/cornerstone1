@@ -1,8 +1,6 @@
 /***************************/
 /*API URLS AND BASE METHODS*/
 
-import { makeLoginObject } from "./CreateObjectUtilities";
-
 const getAllProductsUrl = 'https://fakestoreapi.com/products';
 const getAllCartsUrl = 'https://fakestoreapi.com/carts';
 const getAllCategoriesUrl = `https://fakestoreapi.com/products/categories`;
@@ -332,8 +330,8 @@ export async function deleteUser(userID){
     return deleteFromApi(userUrl);
 }
 
-export async function userLogin(userName, userPass){
-    const loginObject = makeLoginObject(userName, userPass);
+export async function userLogin(loginObject){
+    // const loginObject = makeLoginObject(userName, userPass);
     return addToApi(loginUrl, loginObject);
     // try{
     //     const response = await fetch(`https://fakestoreapi.com/auth/login`,
