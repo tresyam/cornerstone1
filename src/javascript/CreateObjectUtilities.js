@@ -27,11 +27,22 @@ export function makeUserObject(){
     
 }
 
-export function makeLoginObject(userName, userPassword){
-    return {
-        username: userName,
-        password: userPassword
-        // username: "mor_2314",
-        // password: "83r5^_"
+export function makeLoginObject(username, password){
+    // const u = `"${userName}"`;
+    // const p = `"${userPassword}"`
+    console.log("I am in here")
+    console.log(username)
+    console.log(password)
+    const obj = {
+        username,
+        password
     }
+    console.log(obj);
+    return obj;
+    // return {
+    //     username,
+    //     password
+    //     // username: "mor_2314",
+    //     // password: "83r5^_"
+    // }
 }

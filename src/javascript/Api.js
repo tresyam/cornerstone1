@@ -1,3 +1,5 @@
+import axios from "axios";
+
 /***************************/
 /*API URLS AND BASE METHODS*/
 
@@ -19,6 +21,7 @@ async function getFromApi(getUrl){
 }
 
 async function addToApi(addUrl, objectToAdd){
+    console.log(objectToAdd);
     try{
         const response = await fetch(addUrl, 
             {
@@ -224,7 +227,7 @@ export async function createCart(cartObject){
     //         method:"POST",
     //         body:JSON.stringify(cartObject)
     //     });
-    //     const data = await response.json();
+    //     const data = await response.json();  
     //     return data;
     // }
     // catch(error){
@@ -331,16 +334,41 @@ export async function deleteUser(userID){
 }
 
 export async function userLogin(loginObject){
+    console.log("hello")
+    // const getLogin = async () => {
+        try {
+          let response = await axios.post(`https://fakestoreapi.com/auth/login`, {
+            username: "mor_2314",
+            password: "83r5^_",
+          });
+          console.log("alos here");//response.data["token"]);
+        } catch (e) {
+          const error = e.response;
+          console.log(error);
+        }
+    //   };
+    // fetch('https://fakestoreapi.com/auth/login',{
+    //         method:'POST',
+    //         body:loginObject})
     // const loginObject = makeLoginObject(userName, userPass);
-    return addToApi(loginUrl, loginObject);
+    // return addToApi(loginUrl, loginObject);
+    // const obj = {
+    //     username: "mor_2314",
+    //     password: "83r5^_"
+    // }
+    // console.log(obj);
+    // console.log(JSON.stringify(obj))
+    // console.log(loginObject);
+    // console.log(JSON.stringify(loginObject))
     // try{
     //     const response = await fetch(`https://fakestoreapi.com/auth/login`,
     //     {
     //         method:"POST",
-    //         body:JSON.stringify({
-    //             username: userName,//"mor_2314",
-    //             password: userPass//"83r5^_"
-    //         })
+    //         // body: loginObject
+    //         body:{
+    //             username: "mor_2314",
+    //             "password": "83r5^_"
+    //         }
     //     });
     //     const data = await response.json();
     //     return data;
