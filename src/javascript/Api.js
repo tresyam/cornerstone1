@@ -378,7 +378,10 @@ export async function userLogin(userName, passWord) {
 
 
 }
-
+/**
+ * Function to check if the user has logged in or not.  
+ * @returns true if the user is logged in (a loginToken cookie exists), and false if it does not
+ */
 export function checkIfLoggedIn() {
     const loginToken = Cookies.get("loginToken");
     console.log(`Login Token: ${loginToken}`);
@@ -390,7 +393,15 @@ export function checkIfLoggedIn() {
     }
 }
 
+/**
+ * Function to delete the login cookie if it exists.  
+ */
 export function deleteLoginCookie() {
-    Cookies.remove("loginToken");
+    try {
+        Cookies.remove("loginToken");
+    }
+    catch (e) {
+        Console.log("The cookie does not exist!");
+    }
 }
 

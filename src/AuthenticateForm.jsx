@@ -15,9 +15,9 @@ export default function Authenticate() {
       const response = await userLogin(userName, passWord);
       console.log(response.data);
       Cookies.set("loginToken", response.data.token, {expires: 7});
-      deleteLoginCookie();
-      const cookieTest = Cookies.get("loginToken");
-      console.log(`Login Token: ${cookieTest}`)
+      // deleteLoginCookie();
+      // const cookieTest = Cookies.get("loginToken");
+      // console.log(`Login Token: ${cookieTest}`)
     }
     catch (e) {
       setError(e);
