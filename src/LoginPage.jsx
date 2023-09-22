@@ -1,16 +1,34 @@
 import { useState } from "react";
 import Authenticate from "./AuthenticateForm";
 import SignUpForm from "./SignupForm";
+import { checkIfLoggedIn } from "./javascript/Api";
 
-const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-export default function App() {
-    return (
-        <>
-            <Authenticate/>
-            <SignUpForm />
-        </>
-    );
+
+export default function LoginPage() {
+    const [isLoggedIn, setIsLoggedIn] = useState(checkIfLoggedIn());
+    const [authenticateVisible, setAuthenticateVisible] = useState(true);
+    const [signupVisible, setSignupVisible] = useState(false);
+
+    // setIsLoggedIn(checkIfLoggedIn());
+
+    if (isLoggedIn) {
+        return <>{alert("You are already logged in!")}</>
+        //redirect to the home page
+    }
+
+    if (authenticateVisible) {
+        return <Authenticate setAuthenticateVisible={setAuthenticateVisible} setSignupVisible={setSignupVisible} />;
+    }
+    else {
+        return <SignUpForm setAuthenticateVisible={setAuthenticateVisible} setSignupVisible={setSignupVisible} />
+    }
+    // return (
+    //     <>
+    //         {authenticateVisible && }
+    //         {signupVisible && <SignUpForm />}
+    //     </>
+    // );
 }
 
 

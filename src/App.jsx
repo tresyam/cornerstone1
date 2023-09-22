@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 import './App.css'
-import { addNewProduct, createCart, deleteCart, getAllCartsAscending, getAllProducts, getAllUsers, updateCart, userLogin } from './javascript/Api'
+import { addNewProduct, createCart, deleteCart, deleteLoginCookie, getAllCartsAscending, getAllProducts, getAllUsers, updateCart, userLogin } from './javascript/Api'
 import { makeCartObject, makeCartProductObject, makeLoginObject, makeProductObject } from './javascript/CreateObjectUtilities';
 import Authenticate from './AuthenticateForm';
 import SignUpForm from './SignupForm';
+import LoginPage from './LoginPage';
 
 export default function App() {
 
@@ -51,11 +52,9 @@ export default function App() {
     fetchData();
   }, [])
 
+  // deleteLoginCookie();
   return (
-    <>
-      <Authenticate />
-      <SignUpForm />
-    </>
+      <LoginPage/>
   )
 }
 

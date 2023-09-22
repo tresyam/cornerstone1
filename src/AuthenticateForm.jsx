@@ -2,7 +2,7 @@ import { useState } from "react";
 import { deleteLoginCookie, userLogin } from "./javascript/Api";
 import Cookies from "js-cookie";
 
-export default function Authenticate() {
+export default function Authenticate({ setAuthenticateVisible, setSignupVisible }) {
   const [userName, setUserName] = useState("");
   const [passWord, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -14,7 +14,7 @@ export default function Authenticate() {
     try {
       const response = await userLogin(userName, passWord);
       console.log(response.data);
-      Cookies.set("loginToken", response.data.token, {expires: 7});
+      Cookies.set("loginToken", response.data.token, { expires: 7 });
       // deleteLoginCookie();
       // const cookieTest = Cookies.get("loginToken");
       // console.log(`Login Token: ${cookieTest}`)
@@ -23,10 +23,15 @@ export default function Authenticate() {
       setError(e);
       console.error(e);
     }
-
   }
+
+  function switchToSignup() {
+    setAuthenticateVisible(false);
+    setSignupVisible(true);
+  }
+
   return <>
-    <h2>Authenticate!</h2>
+    <h2>Please sign in!</h2>
     {error && <p>{error}</p>}
     <form onSubmit={handleSubmit}>
       <label>
@@ -45,6 +50,9 @@ export default function Authenticate() {
         />
       </label>
       <button>Submit</button>
+    </form>
+    <form onSubmit={switchToSignup}>
+      <label>No Account?</label><button>Sign up!</button>
     </form>
   </>
 

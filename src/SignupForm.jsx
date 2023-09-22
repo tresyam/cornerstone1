@@ -9,7 +9,7 @@ need to make a user data form, can re-use to input for new user, and display/upd
  */
 
 
-export default function SignUpForm() {
+export default function SignUpForm({ setAuthenticateVisible, setSignupVisible }) {
     const [userName, setUserName] = useState("");
     const [passWord, setPassword] = useState("");
     const [userEmail, setUserEmail] = useState("");
@@ -31,6 +31,8 @@ export default function SignUpForm() {
             const response = await addNewUser(newUserObject);
             // const data = response.json();
             console.log(response);
+            setAuthenticateVisible(true);
+            setSignupVisible(false);
         }
         catch (e) {
             setError(e);
