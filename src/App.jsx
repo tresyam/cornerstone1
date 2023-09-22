@@ -9,6 +9,17 @@ import Cookies from "js-cookie";
 import "./cart/cart.css";
 import "./App.css";
 import "./shop.css";
+// import { Routes, Route } from "react-router-dom";
+// import { Container } from "react-bootstrap";
+// import Header from "./components/header";
+// import Home from "./pages/home";
+// import Shop from "./pages/shop";
+// import Cart from "./cart/cart";
+// import React, { useEffect, useState } from "react";
+// import Cookies from "js-cookie";
+// import "./cart/cart.css";
+// import "./App.css";
+// import "./shop.css";
 
 function App() {
   const [show, setShow] = useState(true);
