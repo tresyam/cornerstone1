@@ -9,7 +9,7 @@ need to make a user data form, can re-use to input for new user, and display/upd
  */
 
 
-export default function SignUpForm({ setAuthenticateVisible, setSignupVisible }) {
+export default function SignUpForm({ setAuthenticateVisible, setSignupVisible, setLoggedInVisible }) {
     const [userName, setUserName] = useState("");
     const [passWord, setPassword] = useState("");
     const [userEmail, setUserEmail] = useState("");
@@ -30,9 +30,11 @@ export default function SignUpForm({ setAuthenticateVisible, setSignupVisible })
         try {
             const response = await addNewUser(newUserObject);
             // const data = response.json();
-            console.log(response);
+            // console.log(response);
             setAuthenticateVisible(true);
             setSignupVisible(false);
+            setLoggedInVisible(false);
+            alert("Successfully signed up!")
         }
         catch (e) {
             setError(e);
@@ -61,7 +63,7 @@ export default function SignUpForm({ setAuthenticateVisible, setSignupVisible })
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </label>
-                <br/>
+                <br />
                 <label>
                     First Name:{" "}
                     <input
@@ -76,7 +78,7 @@ export default function SignUpForm({ setAuthenticateVisible, setSignupVisible })
                         onChange={(e) => setUserLastName(e.target.value)}
                     />
                 </label>
-                <br/>
+                <br />
                 <label>
                     Email:{" "}
                     <input
@@ -84,8 +86,8 @@ export default function SignUpForm({ setAuthenticateVisible, setSignupVisible })
                         onChange={(e) => setUserEmail(e.target.value)}
                     />
                 </label>
-                <br/>
-                
+                <br />
+
                 <label>
                     Address:{" "}
                     <input
@@ -100,7 +102,7 @@ export default function SignUpForm({ setAuthenticateVisible, setSignupVisible })
                         onChange={(e) => setUserAddressNumber(e.target.value)}
                     />
                 </label>
-                <br/>
+                <br />
                 <label>
                     City:{" "}
                     <input
@@ -115,7 +117,7 @@ export default function SignUpForm({ setAuthenticateVisible, setSignupVisible })
                         onChange={(e) => setUserZipCode(e.target.value)}
                     />
                 </label>
-                <br/>
+                <br />
                 <label>
                     Phone Number:{" "}
                     <input
@@ -123,7 +125,7 @@ export default function SignUpForm({ setAuthenticateVisible, setSignupVisible })
                         onChange={(e) => setUserPhone(e.target.value)}
                     />
                 </label>
-                <br/>
+                <br />
                 <button>Submit</button>
             </form>
         </>
