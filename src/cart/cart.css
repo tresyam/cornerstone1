@@ -1,0 +1,25 @@
+.img-resize {
+  width: 50%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  flex-grow: 1;
+  background-color: #ebce64; /* Choose your desired background color */
+  padding: 10px;
+  border-bottom: 2px solid #f1f1f1;
+}
+
+.grid-container {
+  /* display: grid; */
+  grid-template-columns: repeat(3, 290px);
+  /* grid-template-rows: repeat(2, 400px); */
+  grid-auto-rows: max-content;
+  gap: 10px;
+  justify-content: center;
+  border: 1 px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+  list-style-type: none;
+  /* margin-left: 50%; margin-right: 50%; */
+  align-content: center;
+}
