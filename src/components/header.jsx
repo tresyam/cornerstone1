@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { BsBag } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 // header function
 export default function Header({ setShow, size }) {
@@ -65,6 +65,7 @@ export default function Header({ setShow, size }) {
               <span>{size}</span>
             </div>
           </Nav.Link>
+          <Link to="/user">Login</Link>
         </Container>
       </Navbar>
     </>

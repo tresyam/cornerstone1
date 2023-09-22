@@ -384,7 +384,7 @@ export async function userLogin(userName, passWord) {
  */
 export function checkIfLoggedIn() {
     const loginToken = Cookies.get("loginToken");
-    console.log(`Login Token: ${loginToken}`);
+    // console.log(`Login Token: ${loginToken}`);
     if (loginToken == undefined) {
         return false;
     }

@@ -9,6 +9,8 @@ import Cookies from "js-cookie";
 import "./cart/cart.css";
 import "./App.css";
 import "./shop.css";
+import LoginPage from "./LoginPage";
+import { deleteLoginCookie } from "./javascript/Api";
 // import { Routes, Route } from "react-router-dom";
 // import { Container } from "react-bootstrap";
 // import Header from "./components/header";
@@ -67,6 +69,8 @@ function App() {
     Cookies.set("cart", JSON.stringify(cart), { expires: 1 });
   };
 
+  // deleteLoginCookie();
+
   return (
     <>
       <Header setShow={setShow} size={cart.length} />
@@ -80,6 +84,7 @@ function App() {
             <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
           }
         />
+        <Route path="/user" element={<LoginPage />} />
       </Routes>
       {/* </Container> */}
     </>
