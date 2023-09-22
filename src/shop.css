@@ -1,0 +1,62 @@
+.p-items {
+  display: flex;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for the product card container */
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+  max-width: 300px; /* Adjust as needed */
+}
+
+/* Style for product images (ensure they are the same size) */
+.product-image {
+  /* width: 100%; */
+  max-height: 200px;
+  /* object-fit: cover; */
+}
+
+/* Style for the product title (bold) */
+.product-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Style for the product description (limited to 100 characters) */
+.product-description {
+  margin-top: 10px;
+  color: #666;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+  max-width: 100%;
+}
+
+.flex {
+  /* display: grid; */
+  grid-template-columns: repeat(2, 290px);
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px;
+}
+
+.flex-item {
+  /* width: calc(25% - 10px); */
+  margin: 40px;
+  padding: 33px;
+  /* background-color: #f2f2f2; */
+  border: 1px solid #ccc;
+  text-align: center;
+  box-sizing: border-box;
+}
