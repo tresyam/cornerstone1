@@ -30,24 +30,37 @@ const Cart = ({ cart, setCart, handleChange }) => {
     <>
       <article className="grid-container">
         {cart.map((item) => (
-          <div key={item.id}>
-            <img className="img-resize" src={item.image} alt="{item.title}" />
-            <p>{item.title}</p>
-
-            <div>
-              <button onClick={() => handleChange(item, 1)}>+</button>
-              <button>{item.quantity}</button>
-              <button onClick={() => handleChange(item, -1)}>-</button>
+          <div className="card-item" key={item.id}>
+            <div className="img-div">
+              <img className="img-resize" src={item.image} alt="{item.title}" />
             </div>
-            <div>
-              <span>{item.price}</span>
-              <button onClick={() => handleRemove(item.id)}>Remove</button>
-            </div>
+            <ul>
+              <li className="item-org">
+                <p>{item.title}</p>
+                <div className="inc-dec-quantity">
+                  <span>{item.price}</span>
+                  <button onClick={() => handleChange(item, 1)}>+</button>
+                  <button>{item.quantity}</button>
+                  <button onClick={() => handleChange(item, -1)}>-</button>
+                  <div className="price">
+                    <button onClick={() => handleRemove(item.id)}>
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         ))}
-        <span>Total Price</span>
-        <span>{price}</span>
       </article>
+      <div className="left-div">
+        <div className="content">
+          <span>Total Price</span>
+        </div>
+        <div className="cart-total">
+          <span>{price}</span>
+        </div>
+      </div>
     </>
   );
 };
