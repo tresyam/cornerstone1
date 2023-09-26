@@ -1,18 +1,28 @@
 .img-resize {
-  width: 50%;
-  height: 100%;
+  width: 15%;
+  padding: 10px;
+  /* height: 100%;
   max-width: 100%;
   max-height: 100%;
   flex-grow: 1;
-  background-color: #ebce64; /* Choose your desired background color */
+  background-color: #ebce64;
+  padding: 10px; */
+  /* border: 2px solid #d0c9c9; */
+}
+
+.card-item {
+  border: 0.5px solid #d0c9c9;
+  border-radius: 10px;
+  margin: 10px;
   padding: 10px;
-  border-bottom: 2px solid #f1f1f1;
+  width: 59%;
+  height: 200px;
 }
 
 .grid-container {
   /* display: grid; */
-  grid-template-columns: repeat(3, 290px);
-  /* grid-template-rows: repeat(2, 400px); */
+  /* grid-template-columns: repeat(3, 290px); */
+  grid-template-columns: 1fr 2fr;
   grid-auto-rows: max-content;
   gap: 10px;
   justify-content: center;
@@ -22,4 +32,21 @@
   list-style-type: none;
   /* margin-left: 50%; margin-right: 50%; */
   align-content: center;
+}
+
+.item-org {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 120px;
+}
+
+.content {
+  padding: 20px;
+  margin-left: 320px;
+}
+
+.left-div {
+  width: 300px;
+  background-color: #f0f0f0;
+  float: left;
 }

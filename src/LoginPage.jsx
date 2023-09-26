@@ -15,6 +15,7 @@ export default function LoginPage() {
     const [signupVisible, setSignupVisible] = useState(false);
     const [loggedInVisible, setLoggedInVisible] = useState(false);
 
+
     if (authenticateVisible) {
         return <div className="loginMain">
             <div className="loginComponent">
@@ -36,6 +37,7 @@ export default function LoginPage() {
                 <LoggedIn />
             </div>
         </div>;
+
     }
 }
 

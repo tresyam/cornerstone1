@@ -65,6 +65,7 @@ export default function Header({ setShow, size }) {
               <span>{size}</span>
             </div>
           </Nav.Link>
+
           <Nav.Link to="/user" as={NavLink}>Login</Nav.Link>
         </Container>
       </Navbar>
