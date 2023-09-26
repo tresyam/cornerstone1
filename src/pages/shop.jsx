@@ -14,7 +14,7 @@ import CartColumns from "../cart/cartColoumns";
 // } from "./javascript/Api";
 
 function Shop({ handleClick }) {
-  const [allProducts, setAllProducts] = useState(null);
+  const [allProducts, setAllProducts] = useState([]);
 
   //create useeffect to retrieve api data
   useEffect(() => {
@@ -31,6 +31,7 @@ function Shop({ handleClick }) {
 
   return (
     <>
+      <h1 className="h-top-all">Shop</h1>
       <section className="flex">
         {allProducts &&
           allProducts.map((item) => (

@@ -18,3 +18,10 @@
 .p-itams {
   justify-content: center;
 }
+.nav-bar {
+  flex-direction: row;
+  position: absolute;
+  right: 20%;
+  top: 18px;
+  gap: 23px;
+}

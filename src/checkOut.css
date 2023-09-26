@@ -1,0 +1,23 @@
+.form-row {
+  display: flex;
+  width: 50%;
+  margin-left: 10%;
+}
+.form-container {
+  margin-top: 50px;
+  margin-right: 50px;
+}
+
+.header {
+  margin-right: 64%;
+}
+.btn {
+  margin-top: 15px;
+  display: inline-block;
+  background: rgb(17, 17, 17);
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  width: 25%;
+  padding: 18px 24px;
+  border-radius: 30px;
+}

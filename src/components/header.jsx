@@ -16,41 +16,43 @@ export default function Header({ setShow, size }) {
         <Container>
           {/* <Navbar.Brand> */}
           <Nav.Link to="/" as={NavLink}>
-            Cornerstone
+            <h4>Cornerstone</h4>
           </Nav.Link>
+        </Container>
+
+        <div className="container-2">
           {/* </Navbar.Brand> */}
           <div className="nav-links">
-            <Nav>
+            <Nav className=" nav-bar">
               <Nav.Link to="/shop" as={NavLink} onClick={() => setShow(true)}>
                 Shop
               </Nav.Link>
 
-              {/* **** additonal category options  */}
-              {/* <Nav.Link to="mens" as={NavLink} onClick={() => setShow(true)}>
+              <Nav.Link to="mens" as={NavLink} onClick={() => setShow(true)}>
                 Mens
               </Nav.Link>
               <Nav.Link to="/womens" as={NavLink} onClick={() => setShow(true)}>
                 Womens
               </Nav.Link>
               <Nav.Link
-                to="/jewelery"
+                to="/jewelry"
                 as={NavLink}
                 onClick={() => setShow(true)}
               >
-                Jewelery
+                Jewelry
               </Nav.Link>
               <Nav.Link
-                to="/Electorics"
+                to="/electronics"
                 as={NavLink}
                 onClick={() => setShow(true)}
               >
                 Electronics
-              </Nav.Link> */}
+              </Nav.Link>
             </Nav>
           </div>
-
+          {/* <Link to="/user">Login</Link> */}
           <Nav.Link to="/cart" as={NavLink} onClick={() => setShow(false)}>
-            <BsBag fontSize="25px" />
+            <BsBag fontSize="35px" />
             <div
               className="rounded-circle bg-info d-flex justify-content-center align-items-center"
               style={{
@@ -65,9 +67,10 @@ export default function Header({ setShow, size }) {
               <span>{size}</span>
             </div>
           </Nav.Link>
-
-          <Nav.Link to="/user" as={NavLink}>Login</Nav.Link>
-        </Container>
+          <Nav.Link to="/user" as={NavLink}>
+            Login
+          </Nav.Link>
+        </div>
       </Navbar>
     </>
   );

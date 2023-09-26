@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { getAllCarts, getSingleCart } from "./api";
-// Adjust the import path based on your project structure
 
 function CartPage({ userId }) {
   const [cart, setCart] = useState([]);
@@ -10,8 +9,7 @@ function CartPage({ userId }) {
       try {
         // Use the appropriate function to get cart data based on user ID or cart ID
         // For example, user's cart ID:
-        // const cartData = await getSingleCart(cartId);
-
+        // const cartData = await getSingleCart(cartId)
         // Or fetch all carts and filter for the user's cart:
         const allCarts = await getAllCarts();
         const userCart = allCarts.find((cart) => cart.userId === userId);
