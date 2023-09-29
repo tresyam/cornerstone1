@@ -1,14 +1,25 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 // import { Container } from "react-bootstrap";
 import Header from "./components/header";
 import Home from "./pages/home";
 import Shop from "./pages/shop";
+import Womens from "./pages/womens";
+import Jewelry from "./pages/jewelry";
+import Electronics from "./pages/electronics";
 import Cart from "./cart/cart";
+import CheckOut from "./pages/CheckOut";
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import SingleItem from "./pages/singleItem";
+import Payment from "./pages/payment";
+import ThankYou from "./pages/thankyou";
 import "./cart/cart.css";
+import "./signupForm.css";
 import "./App.css";
 import "./shop.css";
+import "./checkOut.css";
+import Mens from "./pages/mens";
+// import "./navbar.css"
 import LoginPage from "./LoginPage";
 import { deleteLoginCookie } from "./javascript/Api";
 // import { Routes, Route } from "react-router-dom";
@@ -77,7 +88,33 @@ function App() {
       {/* <Container> */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route
+          path="/electronics"
+          element={<Electronics handleClick={handleClick} />}
+        />
+        <Route path="/mens" element={<Mens handleClick={handleClick} />} />
+        <Route
+          path="/payment"
+          element={<Payment handleClick={handleClick} />}
+        />
+        <Route path="/womens" element={<Womens handleClick={handleClick} />} />
+        <Route
+          path="/thankyou"
+          element={<ThankYou handleClick={handleClick} />}
+        />
+        <Route
+          path="/singleitem"
+          element={<SingleItem handleClick={handleClick} />}
+        />
+        <Route
+          path="/jewelry"
+          element={<Jewelry handleClick={handleClick} />}
+        />
         <Route path="/shop" element={<Shop handleClick={handleClick} />} />
+        <Route
+          path="/checkout"
+          element={<CheckOut handleClick={handleClick} />}
+        />
         <Route
           path="/cart"
           element={

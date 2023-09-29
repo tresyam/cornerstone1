@@ -1,14 +1,15 @@
 import React from "react";
 
-const Home = () => {
+const ThankYou = () => {
   return (
     <>
       {/* <CartColumns /> */}
+      <h1>Thank You!</h1>
       <div className="w-pg">
-        <h1>Welcome to Cornerstone!</h1>
+        <p>Your order now complete!</p>
       </div>
     </>
   );
 };
 
-export default Home;
+export default ThankYou;

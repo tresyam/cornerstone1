@@ -16,14 +16,18 @@ body {
   padding: 20px;
   text-align: center;
   margin: 10px;
-  max-width: 300px; /* Adjust as needed */
+  max-width: 300px;
 }
 
 /* Style for product images (ensure they are the same size) */
 .product-image {
   width: 100%;
+  max-width: 200px;
   /* max-height: 200px; */
   /* object-fit: cover; */
+}
+.upper-Case {
+  text-transform: capitalize;
 }
 
 /* Style for the product title (bold) */
@@ -44,7 +48,7 @@ body {
 
 .flex {
   display: grid;
-  grid-template-columns: repeat(4, 290px);
+  grid-template-columns: repeat(2, 50%);
   justify-content: space-between;
   /* max-width: 600px; */
   margin: 0 auto; /* Center the container horizontally */
